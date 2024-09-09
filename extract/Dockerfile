@@ -13,7 +13,7 @@ WORKDIR /app
 COPY . /app
 
 # Instala las dependencias necesarias
-RUN pip install --no-cache-dir pyspark kaggle pandas
+RUN python3 -m pip install -r requirements.txt
 
 # Comando por defecto para ejecutar el script
 CMD ["python", "extract_spark.py"]
