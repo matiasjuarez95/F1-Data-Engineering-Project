@@ -233,4 +233,4 @@ for df_name, df in spark_dfs.items():
 spark.conf.set("spark.sql.parquet.int96RebaseModeInWrite", "LEGACY")
 for df_name, df in spark_dfs.items():
     output_path = f'/app/formula-1-output/{df_name}/'
-    df.write.parquet(output_path)
+    df.write.mode("overwrite").parquet(output_path)
